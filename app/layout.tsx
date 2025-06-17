@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import { GeistSans } from 'geist/font/sans';
-import { cn } from "../lib/utils";
-import "./globals.css";
 
-const sansFont = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
-});
-
-const headlineFont = GeistSans;
+import "@/assets/css/main.scss";
+import { Header } from "@/base/header";
+import { Footer } from "@/base/footer";
 
 export const metadata: Metadata = {
   title: "Affonso Landing Page",
   description: "Landing page built with the complete Affonso design system",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,14 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          'min-h-screen bg-white font-sans text-foreground antialiased',
-          sansFont.variable,
-          headlineFont.variable
-        )}
-      >
-        {children}
+      <body>
+        <div className={"rootVariables"}>
+          <Header />
+          <main className="main">
+            {children}
+            <Footer />
+          </main>
+          <div id="popups"></div>
+        </div>
       </body>
     </html>
   );

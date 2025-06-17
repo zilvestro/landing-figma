@@ -1,0 +1,85 @@
+@use "@/assets/css/components/1-main/mixin.scss" as *;
+html,
+body {
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f4eaed;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($color: #881337, $alpha: 0.6);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color: #881337, $alpha: 0.8);
+}
+/*** 
+====================================================================
+Global Settings
+====================================================================
+   ***/
+body {
+  font-family: var(--main-font);
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background: var(--white);
+  &.active {
+    overflow: hidden;
+  }
+}
+a {
+  text-decoration: none;
+  opacity: 1;
+  color: var(--black);
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.88;
+  }
+}
+ul {
+  li {
+    list-style: none;
+  }
+}
+.auto__container {
+  position: relative;
+  max-width: 1172px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+section {
+  padding: 80px 0;
+}

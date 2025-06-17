@@ -1,5 +1,5 @@
-import { ExampleDemo } from "../components/example-demo";
+import Landing from "./index/landing";
 
 export default function Home() {
-  return <ExampleDemo />;
+  return <Landing />;
 }
